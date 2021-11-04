@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+</head>
+<style>
+    body {
+        padding-top: 60px;
+    }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'base' %}">Pagina principală</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">contacte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">comanda dvs. <span
+                            class="badge badge-pill badge-danger">{{ cart.products.count }}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="my-4" style="position: fixed">
+                    <h1 style="color:#cc0000; line-height: 50px; margin-bottom: 50px; margin-left: 15px;"><b>BRANDS</b></h1>
+                </div>
+                <div class="my-4" style="position: fixed">
+                    <h5 style="color:#cc0000; font-size: 2vh; line-height: 105px; margin-left: 15px;">accesibil comod rapid</h5>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+<body>
+    <h2 class="mt-4 mb-4" align="right" style="margin-right: 20%"></h2>
+    <section class="container"  style=padding-left:150px>
+        <table class="table" align="right" >
+            <thead>
+            <tr colspan="2">
+                <th scope="col">Produsul</th>
+                <th scope="col">Preț</th>
+                <th scope="col">Cantitate</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cart.products.all %}
+            <tr>
+                <th scope="row">{{ item.content_object.title }}</th>
+                <td><strong>{{ item.content_object.price }} lei</strong></td>
+                <td><strong>{{ item.qty }}</strong></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="1"></td>
+                <td><strong>În total:</strong></td>
+                <td><strong>{{ cart.final_price }} lei</strong></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </section>
+    <form action="{% url 'make_order' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-3 mb-6">
+                {{ form.first_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-3 mb-6">
+                {{ form.last_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-3 mb-6">
+                {{ form.address|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3 mb-6">
+                {{ form.phone|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-3 mb-6">
+                {{ form.buying_type|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-3 mb-6">
+                {{ form.order_date|as_crispy_field }}
+            </div>
+        </div>
+        <a href="{% url 'cart' %}"><button type="submit" class="btn btn-success">Finalizează comanda</button></a>
+    </form>
+</body>

@@ -1,0 +1,30 @@
+body {
+    background-image: url(images/productx.jpg); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table {
+    display: block;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: transparent;
+    max-width: 50%;
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+    border-top: 2px solid #669;
+    padding-bottom: 50px;
+   }
+
+th, td {
+    border-bottom: 1px solid #669;
+}
+tr:hover {
+    background-color: #f5f5f5;
+    background: rgba(50, 50, 50, 0.3);
+}
+
+
+

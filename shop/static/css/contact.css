@@ -1,0 +1,7 @@
+body {
+    background-image: url(images/contact4p.jpg); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

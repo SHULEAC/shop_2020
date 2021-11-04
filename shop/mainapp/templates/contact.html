@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+
+</head>
+
+<style>
+    body {
+        padding-top: 60px;
+    }
+</style>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'base' %}">Pagina principală</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact/">contacte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart/">comanda dvs. <span
+                            class="badge badge-pill badge-danger">{{ cart.products.count }}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Page Content -->
+    <div class="container"style="margin-top: 100px">
+        <div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <h1 class="my-4", style="color:#cc0000; line-height: 5px; margin-left: 40px"><b>BRANDS</b></h1>
+                    <h6 class="my-4", style="color:#cc0000; line-height: 0px; margin-left: 40px;">accesibil comod rapid</h6>
+                    <div class="list-group", style="padding-right: 20px; margin-right: -30px; text-align: center">
+                        <div>
+                            <div>
+                                <div class="card bg-light mb-3">
+                                    <div class="card-header text-white text-uppercase" style="background: #cc0000">
+                                        <h5 style="text-align: center">contacte:</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6>Chișinău</h6>
+                                        <h6>Strada Columna 104</h6>
+                                        <h6>Email : contactus@brands.com</h6>
+                                        <h6>Tel. +373 69 91 91 91</h6>
+                                        <h6>Tel. +373 79 91 91 91</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="margin-left: 550px; margin-top: -315px; margin-right: 60px ">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.6784343722934!2d28.834047115610407!3d47.0269166791505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c35c720301d%3A0xddc2187ad2e42706!2sStrada%20Columna%20104%2C%20Chi%C8%99in%C4%83u!5e0!3m2!1sro!2s!4v1607634315272!5m2!1sro!2s" width="400" height="300" frameborder="0" style="border: 2px double black; padding: 5px; background: #d1e8ff" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="py-2 bg-dark", style="position: absolute; left: 0; bottom: 0; width: 100%; height: 35px">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; SHULEAC TEST 2020</p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+

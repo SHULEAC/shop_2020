@@ -1,0 +1,16 @@
+body {
+    /*background-image: url('images/product2x.jpg'); !* Путь к фоновому изображению *!*/
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+    background-position: bottom ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#videoBG {
+    position: fixed;
+    z-index: -1;
+    top: 1px;
+    width: 100%;
+    height: auto;
+}

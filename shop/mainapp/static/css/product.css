@@ -1,0 +1,72 @@
+body {
+    background-image: url(images/productx.jpg); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: transparent;
+    max-width: 90%;
+    width: 60%;
+    border-collapse: collapse;
+    text-align: left;
+    border-top: 2px solid #669;
+    border-bottom: 2px solid #669;
+}
+
+td {
+    color: #669;
+    padding: 10px 15px;
+}
+tr:hover td {background: #e8edff;}
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 100%;
+}
+
+.ienlarger a {
+    display:block;
+    text-decoration: none;
+}
+
+.ienlarger a:hover{
+    position:relative;
+}
+
+.ienlarger a span {  /* Для большого изображения и названия */
+    position: absolute;
+    display:none;
+    color: #FFCC00; /* Текст названия */
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px; /* Размер шрифта названия */
+    background-color: #000000;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.ienlarger img { /* Для IE, чтобы не было рамки вокруг ссылки */
+    border-width: 0;
+}
+
+.ienlarger a:hover span {
+    display:block;
+    top: -50px; /* Большое изображение выскакивает вверх на 50px от миниатюры */
+    right: -20px; /* Большое изображение выскакивает влево на 90px от миниатюры */
+    z-index: 100;
+
+    /* Если добавить правило cursor:default;, то отключится курсор в виде руки на большом изображении */
+}
+
+.resize_thumb {
+    width: 150px; /* Вводим нужный размер миниатюры здесь */
+    height : auto;
+}
